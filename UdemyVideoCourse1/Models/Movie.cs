@@ -5,7 +5,7 @@ using System.Web;
 
 namespace UdemyVideoCourse1.Models
 {
-    public class Video
+    public class Movie
     {
         public int Id { get; set; }
         public string Name { get; set; }
