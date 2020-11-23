@@ -13,18 +13,24 @@ namespace UdemyVideoCourse1.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            var customers = new List<Customer>
-            {
-                //new Customer{Name = "Joe Allan"},
-                //new Customer{Name = "Rachel G"}
-            };
+
             var viewModel = new CustomerViewModel
 
             {
-                Customers = customers
+                Customers = GetCustomers()
             };
             
             return View(viewModel);
+        }
+
+        private List<Customer> GetCustomers()
+        {
+            var customers = new List<Customer>
+            {
+                new Customer{Id= 1, Name = "Joe Allan"},
+                new Customer{Id = 2, Name = "Rachel G"}
+            };
+            return customers;
         }
     }
 }

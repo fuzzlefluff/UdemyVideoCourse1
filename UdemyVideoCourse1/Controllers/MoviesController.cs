@@ -14,18 +14,23 @@ namespace UdemyVideoCourse1.Controllers
         // GET: Movies/Random
         public ActionResult Index()
         {
-            var movies = new List<Movie>
-            {
-                //new Movie{Name = "Toy Story"},
-                //new Movie{Name = "Rocket Blast"}
-            };
+           
             var viewModel = new MovieViewModel()
 
             {
-               Movies = movies
+               Movies = GetMovies()
             };
             return View(viewModel);
         }
-       
+        private List<Movie> GetMovies()
+        {
+            var movies = new List<Movie>
+            {
+                new Movie{Id = 1, Name = "Toy Story"},
+                new Movie{Id = 2, Name = "Rocket Blast"}
+            };
+            return movies;
+        }
+
     }
 }
