@@ -15,19 +15,27 @@ namespace UdemyVideoCourse1.Controllers
         public ActionResult Index()
         {
            
-            var viewModel = new MovieViewModel()
+            var viewModel = new MovieCustomerListViewModel()
 
             {
                Movies = GetMovies()
             };
             return View(viewModel);
         }
+        public ActionResult Details(int id)
+        {
+            var movie = GetMovies().SingleOrDefault(c => c.Id == id);
+
+            if (movie == null) { return HttpNotFound(); }
+
+            return View(movie);
+        }
         private List<Movie> GetMovies()
         {
             var movies = new List<Movie>
             {
                 new Movie{Id = 1, Name = "Toy Story"},
-                new Movie{Id = 2, Name = "Rocket Blast"}
+                new Movie{Id = 2, Name = "Shrek!"}
             };
             return movies;
         }

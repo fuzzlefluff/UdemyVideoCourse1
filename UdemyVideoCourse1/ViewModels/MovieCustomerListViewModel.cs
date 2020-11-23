@@ -6,8 +6,9 @@ using UdemyVideoCourse1.Models;
 
 namespace UdemyVideoCourse1.ViewModels
 {
-    public class CustomerViewModel
+    public class MovieCustomerListViewModel
     {
+        public List<Movie> Movies { get; set; }
         public List<Customer> Customers { get; set; }
     }
 }

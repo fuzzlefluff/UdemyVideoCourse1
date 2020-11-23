@@ -14,7 +14,7 @@ namespace UdemyVideoCourse1.Controllers
         public ActionResult Index()
         {
 
-            var viewModel = new CustomerViewModel
+            var viewModel = new MovieCustomerListViewModel()
 
             {
                 Customers = GetCustomers()
@@ -34,7 +34,7 @@ namespace UdemyVideoCourse1.Controllers
         {
             var customers = new List<Customer>
             {
-                new Customer{Id= 1, Name = "Joe Allan"},
+                new Customer{Id = 1, Name = "Joe Allan"},
                 new Customer{Id = 2, Name = "Rachel G"}
             };
             return customers;
