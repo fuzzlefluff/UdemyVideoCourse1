@@ -1,0 +1,23 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@model UdemyVideoCourse1.ViewModels.CustomerViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer Page</h2>
+
+
+@if (Model.Customers.Count == 0)
+{
+    <p>There are no Customers! What happened?</p>
+}
+else{
+<ul>
+    @foreach (var customer in Model.Customers)
+    {
+        <li>@customer.Name</li>
+    }
+</ul>
+}

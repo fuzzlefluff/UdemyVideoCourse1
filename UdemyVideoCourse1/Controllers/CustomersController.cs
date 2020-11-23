@@ -6,26 +6,25 @@ using System.Web.Mvc;
 using UdemyVideoCourse1.Models;
 using UdemyVideoCourse1.ViewModels;
 
-
 namespace UdemyVideoCourse1.Controllers
 {
-    public class MoviesController : Controller
+    public class CustomersController : Controller
     {
-        // GET: Movies/Random
+        // GET: Customer
         public ActionResult Index()
         {
-            var movies = new List<Movie>
+            var customers = new List<Customer>
             {
-                //new Movie{Name = "Toy Story"},
-                //new Movie{Name = "Rocket Blast"}
+                //new Customer{Name = "Joe Allan"},
+                //new Customer{Name = "Rachel G"}
             };
-            var viewModel = new MovieViewModel()
+            var viewModel = new CustomerViewModel
 
             {
-               Movies = movies
+                Customers = customers
             };
+            
             return View(viewModel);
         }
-       
     }
 }
