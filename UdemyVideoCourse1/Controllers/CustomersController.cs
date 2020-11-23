@@ -23,6 +23,14 @@ namespace UdemyVideoCourse1.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Details(int id)
+        {
+            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+
+            if (customer == null) { return HttpNotFound();}
+
+            return View(customer);
+        }
         private List<Customer> GetCustomers()
         {
             var customers = new List<Customer>
