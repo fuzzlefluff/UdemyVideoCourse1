@@ -22,7 +22,6 @@ namespace UdemyVideoCourse1.Controllers
             
             return View(viewModel);
         }
-
         public ActionResult Details(int id)
         {
             var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
