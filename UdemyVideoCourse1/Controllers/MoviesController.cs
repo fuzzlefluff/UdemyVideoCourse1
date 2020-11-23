@@ -14,12 +14,9 @@ namespace UdemyVideoCourse1.Controllers
         // GET: Movies/Random
         public ActionResult Index()
         {
-           
-            var viewModel = new MovieCustomerListViewModel()
 
-            {
-               Movies = GetMovies()
-            };
+            var viewModel = new MovieCustomerListViewModel();
+            //viewModel.Movies = GetMovies();
             return View(viewModel);
         }
         public ActionResult Details(int id)
