@@ -191,6 +191,22 @@
     <Compile Include="Migrations\202011251400405_PopulateMembershipTypes.Designer.cs">
       <DependentUpon>202011251400405_PopulateMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011251409586_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\202011251409586_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>202011251409586_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011251422194_CusmrInfo.cs" />
+    <Compile Include="Migrations\202011251422194_CusmrInfo.Designer.cs">
+      <DependentUpon>202011251422194_CusmrInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011251424379_init1.cs" />
+    <Compile Include="Migrations\202011251424379_init1.Designer.cs">
+      <DependentUpon>202011251424379_init1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011251427110_repairCustomertoDB.cs" />
+    <Compile Include="Migrations\202011251427110_repairCustomertoDB.Designer.cs">
+      <DependentUpon>202011251427110_repairCustomertoDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -293,6 +309,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011251400405_PopulateMembershipTypes.resx">
       <DependentUpon>202011251400405_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011251409586_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>202011251409586_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011251422194_CusmrInfo.resx">
+      <DependentUpon>202011251422194_CusmrInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011251424379_init1.resx">
+      <DependentUpon>202011251424379_init1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011251427110_repairCustomertoDB.resx">
+      <DependentUpon>202011251427110_repairCustomertoDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

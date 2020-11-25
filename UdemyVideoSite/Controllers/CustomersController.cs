@@ -10,31 +10,35 @@ namespace UdemyVideoSite.Controllers
 {
     public class CustomersController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public CustomersController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+            base.Dispose(disposing);
+        }
+
         // GET: Customer
         public ActionResult Index()
         {
 
             var viewModel = new MovieCustomerListViewModel();
-            viewModel.Customers = GetCustomers();
+            viewModel.Customers = _context.Customers.ToList();
 
             return View(viewModel);
         }
         public ActionResult Details(int id)
         {
-            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customer == null) { return HttpNotFound(); }
 
             return View(customer);
-        }
-        private List<Customer> GetCustomers()
-        {
-            var customers = new List<Customer>
-            {
-                new Customer{Id = 1, Name = "Joe Allan"},
-                new Customer{Id = 2, Name = "Rachel G"}
-            };
-            return customers;
         }
     }
 }
