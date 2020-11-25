@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyVideoSite", "WebApplication1\UdemyVideoSite.csproj", "{EB09466C-A50C-4573-9745-9965D8798EEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyVideoSite", "UdemyVideoSite\UdemyVideoSite.csproj", "{EB09466C-A50C-4573-9745-9965D8798EEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
