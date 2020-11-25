@@ -1,0 +1,23 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@model UdemyVideoSite.ViewModels.MovieCustomerListViewModel
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer Page</h2>
+
+
+@if (Model.Customers.Count == 0)
+{
+    <p>There are no Customers! What happened?</p>
+}
+else{
+    <ul>
+        @foreach (var customer in Model.Customers)
+        {
+            <li>@Html.ActionLink(customer.Name,"Details","Customers",new{id=customer.Id},null)</li>
+        }
+    </ul>
+}
