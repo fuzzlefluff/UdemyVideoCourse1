@@ -207,14 +207,6 @@
     <Compile Include="Migrations\202011251427110_repairCustomertoDB.Designer.cs">
       <DependentUpon>202011251427110_repairCustomertoDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011261449437_membershipNameProperty.cs" />
-    <Compile Include="Migrations\202011261449437_membershipNameProperty.Designer.cs">
-      <DependentUpon>202011261449437_membershipNameProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011261450358_membershipNameProperty2.cs" />
-    <Compile Include="Migrations\202011261450358_membershipNameProperty2.Designer.cs">
-      <DependentUpon>202011261450358_membershipNameProperty2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202011261451184_membershipNameProperty21.cs" />
     <Compile Include="Migrations\202011261451184_membershipNameProperty21.Designer.cs">
       <DependentUpon>202011261451184_membershipNameProperty21.cs</DependentUpon>
@@ -223,13 +215,21 @@
     <Compile Include="Migrations\202011261452536_updatingMembershipName.Designer.cs">
       <DependentUpon>202011261452536_updatingMembershipName.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011261507127_upMbesiVau.cs" />
-    <Compile Include="Migrations\202011261507127_upMbesiVau.Designer.cs">
-      <DependentUpon>202011261507127_upMbesiVau.cs</DependentUpon>
+    <Compile Include="Migrations\202011261507127_updateMembershipNameValues.cs" />
+    <Compile Include="Migrations\202011261507127_updateMembershipNameValues.Designer.cs">
+      <DependentUpon>202011261507127_updateMembershipNameValues.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202011261523530_customerBirthdayProperty.cs" />
     <Compile Include="Migrations\202011261523530_customerBirthdayProperty.Designer.cs">
       <DependentUpon>202011261523530_customerBirthdayProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011261537101_addMoviesTable.cs" />
+    <Compile Include="Migrations\202011261537101_addMoviesTable.Designer.cs">
+      <DependentUpon>202011261537101_addMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011261539202_seedMovieTable.cs" />
+    <Compile Include="Migrations\202011261539202_seedMovieTable.Designer.cs">
+      <DependentUpon>202011261539202_seedMovieTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -346,23 +346,23 @@
     <EmbeddedResource Include="Migrations\202011251427110_repairCustomertoDB.resx">
       <DependentUpon>202011251427110_repairCustomertoDB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011261449437_membershipNameProperty.resx">
-      <DependentUpon>202011261449437_membershipNameProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011261450358_membershipNameProperty2.resx">
-      <DependentUpon>202011261450358_membershipNameProperty2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011261451184_membershipNameProperty21.resx">
       <DependentUpon>202011261451184_membershipNameProperty21.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011261452536_updatingMembershipName.resx">
       <DependentUpon>202011261452536_updatingMembershipName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011261507127_upMbesiVau.resx">
-      <DependentUpon>202011261507127_upMbesiVau.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011261507127_updateMembershipNameValues.resx">
+      <DependentUpon>202011261507127_updateMembershipNameValues.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011261523530_customerBirthdayProperty.resx">
       <DependentUpon>202011261523530_customerBirthdayProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011261537101_addMoviesTable.resx">
+      <DependentUpon>202011261537101_addMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011261539202_seedMovieTable.resx">
+      <DependentUpon>202011261539202_seedMovieTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

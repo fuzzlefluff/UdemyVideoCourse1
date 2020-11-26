@@ -3,7 +3,7 @@ namespace UdemyVideoSite.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class upMbesiVau : DbMigration
+    public partial class updateMembershipNameValues : DbMigration
     {
         public override void Up()
         {

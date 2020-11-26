@@ -7,9 +7,9 @@ namespace UdemyVideoSite.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class upMbesiVau : IMigrationMetadata
+    public sealed partial class updateMembershipNameValues : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(upMbesiVau));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updateMembershipNameValues));
         
         string IMigrationMetadata.Id
         {

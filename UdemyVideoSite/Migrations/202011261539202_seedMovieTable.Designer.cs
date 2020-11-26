@@ -7,13 +7,13 @@ namespace UdemyVideoSite.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class membershipNameProperty2 : IMigrationMetadata
+    public sealed partial class seedMovieTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(membershipNameProperty2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(seedMovieTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011261450358_membershipNameProperty2"; }
+            get { return "202011261539202_seedMovieTable"; }
         }
         
         string IMigrationMetadata.Source
