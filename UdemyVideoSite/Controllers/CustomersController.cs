@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using UdemyVideoSite.Models;
 using UdemyVideoSite.ViewModels;
+using System.Data.Entity;
 
 namespace UdemyVideoSite.Controllers
 {
@@ -28,7 +29,7 @@ namespace UdemyVideoSite.Controllers
         {
 
             var viewModel = new MovieCustomerListViewModel();
-            viewModel.Customers = _context.Customers.ToList();
+            viewModel.Customers = _context.Customers.Include(c => c.MembershipType).ToList();
 
             return View(viewModel);
         }
