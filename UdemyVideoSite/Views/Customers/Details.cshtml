@@ -1,4 +1,5 @@
-﻿@model UdemyVideoSite.Models.Customer
+﻿@using Microsoft.Ajax.Utilities
+@model UdemyVideoSite.Models.Customer
 
 @{
     ViewBag.Title = Model.Name+" Details";
@@ -10,6 +11,10 @@
 <ul>
     <li>Name: @Model.Name</li>
     <li>Newsletter Subscriber: @Model.IsSubscribedToNewsletter</li>
+    @if (!Model.Birthdate.IsNullOrWhiteSpace())
+    {
+        <li>Birthday: @Model.Birthdate</li>
+    }
 </ul>
 <table class="table table-bordered table-hover">
     <thread>
