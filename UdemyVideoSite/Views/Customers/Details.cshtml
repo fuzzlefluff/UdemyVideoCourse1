@@ -10,22 +10,22 @@
 <ul>
     <li>Name: @Model.Name</li>
     <li>Newsletter Subscriber: @Model.IsSubscribedToNewsletter</li>
-    <table class="table table-bordered table-hover">
-        <thread>
-            <tr>
-                <th>Membership Type</th>
-                <th>Fee</th>
-                <th>Length</th>
-                <th>Discount Rate</th>
-            </tr>
-        </thread>
-        <tbody>
-            <tr>
-                <td>@Model.MembershipType.Name</td>
-                <td>$@Model.MembershipType.SignUpFee</td>
-                <td>@Model.MembershipType.DurationInMonths Months</td>
-                <td>@Model.MembershipType.DiscountRate%</td>
-            </tr>
-        </tbody>
-    </table>
 </ul>
+<table class="table table-bordered table-hover">
+    <thread>
+        <tr>
+            <th>Membership Type</th>
+            <th>Fee</th>
+            <th>Length</th>
+            <th>Discount Rate</th>
+        </tr>
+    </thread>
+    <tbody>
+    <tr>
+        <td>@Model.MembershipType.Name</td>
+        <td>$@Model.MembershipType.SignUpFee</td>
+        <td>@Model.MembershipType.DurationInMonths Months</td>
+        <td>@Model.MembershipType.DiscountRate%</td>
+    </tr>
+    </tbody>
+</table>
