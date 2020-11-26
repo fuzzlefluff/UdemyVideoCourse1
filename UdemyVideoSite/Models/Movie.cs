@@ -12,5 +12,16 @@ namespace UdemyVideoSite.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+        [Required]
+        public Genre Genre { get; set; }
+        [Required]
+        [StringLength(255)]
+        public string ReleaseDate { get; set; }
+        [Required]
+        [StringLength(255)]
+        public string DateAdded { get; set; }
+        [Required]
+        public byte Stock { get; set; }
+
     }
 }

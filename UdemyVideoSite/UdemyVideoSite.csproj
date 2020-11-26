@@ -231,9 +231,26 @@
     <Compile Include="Migrations\202011261539202_seedMovieTable.Designer.cs">
       <DependentUpon>202011261539202_seedMovieTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011261555574_newMovieProperties.cs" />
+    <Compile Include="Migrations\202011261555574_newMovieProperties.Designer.cs">
+      <DependentUpon>202011261555574_newMovieProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011261557466_addGenreTable.cs" />
+    <Compile Include="Migrations\202011261557466_addGenreTable.Designer.cs">
+      <DependentUpon>202011261557466_addGenreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011261604200_seedGenres.cs" />
+    <Compile Include="Migrations\202011261604200_seedGenres.Designer.cs">
+      <DependentUpon>202011261604200_seedGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011261614304_genreUpdates.cs" />
+    <Compile Include="Migrations\202011261614304_genreUpdates.Designer.cs">
+      <DependentUpon>202011261614304_genreUpdates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -363,6 +380,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011261539202_seedMovieTable.resx">
       <DependentUpon>202011261539202_seedMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011261555574_newMovieProperties.resx">
+      <DependentUpon>202011261555574_newMovieProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011261557466_addGenreTable.resx">
+      <DependentUpon>202011261557466_addGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011261604200_seedGenres.resx">
+      <DependentUpon>202011261604200_seedGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011261614304_genreUpdates.resx">
+      <DependentUpon>202011261614304_genreUpdates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

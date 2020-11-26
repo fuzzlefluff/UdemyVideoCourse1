@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using UdemyVideoSite.Models;
 using UdemyVideoSite.ViewModels;
+using System.Data.Entity;
+
 
 namespace UdemyVideoSite.Controllers
 {
@@ -27,12 +29,12 @@ namespace UdemyVideoSite.Controllers
         {
 
             var viewModel = new MovieCustomerListViewModel();
-            viewModel.Movies = _context.Movies.ToList();
+            viewModel.Movies = _context.Movies.Include(c => c.Genre).ToList();
             return View(viewModel);
         }
         public ActionResult Details(int id)
         {
-            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+            var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
 
             if (movie == null) { return HttpNotFound(); }
 
