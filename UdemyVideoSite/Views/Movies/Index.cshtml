@@ -13,11 +13,21 @@
 }
 else
 {
-    <ul>
+<table class="table table-bordered table-hover">
+    <thread>
+        <tr>
+            <th>Name</th>
+            
+        </tr>
+    </thread>
+    <tbody>
         @foreach (var movie in Model.Movies)
         {
-
-            <li>@Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)</li>
+            <tr>
+                <td>@Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)</td>
+                
+            </tr>
         }
-    </ul>
+    </tbody>
+</table>
 }
