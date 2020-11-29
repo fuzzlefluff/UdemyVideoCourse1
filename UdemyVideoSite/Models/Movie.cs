@@ -15,11 +15,9 @@ namespace UdemyVideoSite.Models
         [Required]
         public Genre Genre { get; set; }
         [Required]
-        [StringLength(255)]
-        public string ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
         [Required]
-        [StringLength(255)]
-        public string DateAdded { get; set; }
+        public DateTime? DateAdded { get; set; }
         [Required]
         public byte Stock { get; set; }
 

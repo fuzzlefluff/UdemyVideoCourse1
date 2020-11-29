@@ -251,6 +251,10 @@
     <Compile Include="Migrations\202011291911462_changeDOBtoTimeType.Designer.cs">
       <DependentUpon>202011291911462_changeDOBtoTimeType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011291956461_changeMovieTimesToDateType.cs" />
+    <Compile Include="Migrations\202011291956461_changeMovieTimesToDateType.Designer.cs">
+      <DependentUpon>202011291956461_changeMovieTimesToDateType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -401,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011291911462_changeDOBtoTimeType.resx">
       <DependentUpon>202011291911462_changeDOBtoTimeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011291956461_changeMovieTimesToDateType.resx">
+      <DependentUpon>202011291956461_changeMovieTimesToDateType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
