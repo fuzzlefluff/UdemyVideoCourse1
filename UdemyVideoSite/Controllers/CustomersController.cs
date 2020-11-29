@@ -12,23 +12,21 @@ namespace UdemyVideoSite.Controllers
     public class CustomersController : Controller
     {
         private ApplicationDbContext _context;
-
         public CustomersController()
         {
             _context = new ApplicationDbContext();
         }
-
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
             base.Dispose(disposing);
         }
-
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new NewCustomerViewModel()
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
             return View("CustomerForm",viewModel);
@@ -45,11 +43,26 @@ namespace UdemyVideoSite.Controllers
                 var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
                 customerInDb.Name = customer.Name;
                 customerInDb.Birthdate = customer.Birthdate;
-                customerInDb.MembershipType = customer.MembershipType;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
                 customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
             }
             _context.SaveChanges();
             return RedirectToAction("Index", "Customers");
+        }
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new NewCustomerViewModel()
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+            return View("CustomerForm", viewModel);
         }
         public ActionResult Remove(int id)
         {
@@ -72,23 +85,6 @@ namespace UdemyVideoSite.Controllers
             viewModel.Customers = _context.Customers.Include(c => c.MembershipType).ToList();
             return View(viewModel);
         }
-
-        public ActionResult Edit(int id)
-        {
-            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
-            if (customer == null)
-            {
-                return HttpNotFound();
-            }
-
-            var viewModel = new NewCustomerViewModel()
-            {
-                Customer = customer,
-                MembershipTypes = _context.MembershipTypes.ToList()
-            };
-            return View("CustomerForm",viewModel);
-        }
-
         public ActionResult Details(int id)
         {
             var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);

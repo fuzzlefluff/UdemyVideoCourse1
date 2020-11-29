@@ -25,7 +25,7 @@ else
         @foreach (var movie in Model.Movies)
         {
             <tr>
-                <td>@Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)</td>
+                <td>@Html.ActionLink(movie.Name, "Edit", "Movies", new { id = movie.Id }, null)</td>
                 <td>@movie.Genre.Name</td>
                 
             </tr>
@@ -33,3 +33,4 @@ else
     </tbody>
 </table>
 }
+<input type="button" class="btn btn-info" value="New Movie" onclick="location.href = '@Url.Action("New", "Movies")'" />
