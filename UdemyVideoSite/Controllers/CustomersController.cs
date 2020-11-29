@@ -31,7 +31,7 @@ namespace UdemyVideoSite.Controllers
             {
                 MembershipTypes = membershipTypes
             };
-            return View(viewModel);
+            return View("CustomerForm",viewModel);
         }
         [HttpPost]
         public ActionResult Create(Customer customer)
@@ -40,16 +40,30 @@ namespace UdemyVideoSite.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index", "Customers");
         }
-
         // GET: Customer
         public ActionResult Index()
         {
-
             var viewModel = new MovieCustomerListViewModel();
             viewModel.Customers = _context.Customers.Include(c => c.MembershipType).ToList();
-
             return View(viewModel);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new NewCustomerViewModel()
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+            return View("CustomerForm",viewModel);
+        }
+
         public ActionResult Details(int id)
         {
             var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);

@@ -11,7 +11,7 @@
 <ul>
     <li>Name: @Model.Name</li>
     <li>Newsletter Subscriber: @Model.IsSubscribedToNewsletter</li>
-    @if (!Model.Birthdate.IsNullOrWhiteSpace())
+    @if (Model.Birthdate != null)
     {
         <li>Birthday: @Model.Birthdate</li>
     }
