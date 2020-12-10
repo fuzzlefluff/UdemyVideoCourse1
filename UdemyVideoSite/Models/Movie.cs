@@ -24,7 +24,7 @@ namespace UdemyVideoSite.Models
         public DateTime? DateAdded { get; set; }
         [Required]
         [Display(Name = "Movies in Stock")]
+        [Range(1,20)]
         public byte Stock { get; set; }
-
     }
 }

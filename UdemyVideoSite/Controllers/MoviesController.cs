@@ -30,15 +30,26 @@ namespace UdemyVideoSite.Controllers
             {
                 Movie = new Movie
                 {
-                    DateAdded = DateTime.Now
+                    DateAdded = DateTime.Now,
+                    ReleaseDate = DateTime.Now
                 },
                 Genres = genres
             };
             return View("MoviesForm", viewModel);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new NewMovieViewModel()
+                {
+                    Movie = movie,
+                    Genres = _context.Genres.ToList()
+                };
+                return View("MoviesForm",viewModel);
+            }
             if (movie.Id == 0)
             {
                 _context.Movies.Add(movie);
