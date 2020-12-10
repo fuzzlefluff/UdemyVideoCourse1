@@ -13,7 +13,7 @@ namespace UdemyVideoSite.Dtos
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-        [Min18YearIfAMember]
+        //[Min18YearIfAMember]
         public DateTime? Birthdate { get; set; }
         public bool IsSubscribedToNewsletter { get; set; }
         public byte MembershipTypeId { get; set; }
