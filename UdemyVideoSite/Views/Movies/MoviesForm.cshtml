@@ -5,7 +5,9 @@
 }
 
 <h2>New Movie</h2>
-<h3>Date Added to Database: @Model.Movie.DateAdded</h3>
+<label>Date Added to Database: @Model.Movie.DateAdded.Value.ToString("d MMM yyyy")</label>
+
+
 @using (Html.BeginForm("Save", "Movies"))
 {
     @Html.ValidationSummary(true,"Please fix the following errors")
