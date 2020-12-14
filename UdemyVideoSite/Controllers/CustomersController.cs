@@ -91,9 +91,7 @@ namespace UdemyVideoSite.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            var viewModel = new MovieCustomerListViewModel();
-            viewModel.Customers = _context.Customers.Include(c => c.MembershipType).ToList();
-            return View(viewModel);
+            return View();
         }
         public ActionResult Details(int id)
         {
