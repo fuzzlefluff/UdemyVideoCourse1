@@ -23,6 +23,7 @@ namespace UdemyVideoSite.Controllers
             _context.Dispose();
             base.Dispose(disposing);
         }
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -39,6 +40,7 @@ namespace UdemyVideoSite.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)
@@ -66,6 +68,7 @@ namespace UdemyVideoSite.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index", "Movies");
         }
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
@@ -81,6 +84,7 @@ namespace UdemyVideoSite.Controllers
             };
             return View("MoviesForm", viewModel);
         }
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Remove(int id)
         {
             if (id == 0)
@@ -98,7 +102,11 @@ namespace UdemyVideoSite.Controllers
         // GET: Movies/Random
         public ActionResult Index()
         {
-            return View();
+            if (User.IsInRole(RoleName.CanManageMovies))
+            {
+                return View("List");
+            }
+            return View("ReadOnlyList");
         }
         public ActionResult Details(int id)
         {
