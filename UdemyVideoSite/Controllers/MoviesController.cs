@@ -98,10 +98,7 @@ namespace UdemyVideoSite.Controllers
         // GET: Movies/Random
         public ActionResult Index()
         {
-
-            var viewModel = new MovieCustomerListViewModel();
-            viewModel.Movies = _context.Movies.Include(c => c.Genre).ToList();
-            return View(viewModel);
+            return View();
         }
         public ActionResult Details(int id)
         {

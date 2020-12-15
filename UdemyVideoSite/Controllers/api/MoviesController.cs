@@ -7,6 +7,7 @@ using System.Web.Http;
 using AutoMapper;
 using UdemyVideoSite.Dtos;
 using UdemyVideoSite.Models;
+using System.Data.Entity;
 
 namespace UdemyVideoSite.Controllers.api
 {
@@ -21,7 +22,7 @@ namespace UdemyVideoSite.Controllers.api
         //GET /api/movies
         public IEnumerable<MovieDto> GetMovies()
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie,MovieDto>);
+            return _context.Movies.Include(m => m.Genre).ToList().Select(Mapper.Map<Movie,MovieDto>);
         }
         //GET /api/movies/1
         public IHttpActionResult GetMovie(int id)
