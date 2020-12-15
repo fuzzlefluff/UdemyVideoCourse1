@@ -9,6 +9,7 @@ using System.Web.Http;
 using AutoMapper;
 using UdemyVideoSite.Dtos;
 using UdemyVideoSite.Models;
+using System.Data.Entity;
 
 namespace UdemyVideoSite.Controllers.api
 {
@@ -24,7 +25,7 @@ namespace UdemyVideoSite.Controllers.api
         //GET /api/customers
         public IEnumerable<CustomerDto> GetCustomers()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
+            return _context.Customers.Include(c => c.MembershipType).ToList().Select(Mapper.Map<Customer,CustomerDto>);
         }
 
         //GET /api/customers/1
