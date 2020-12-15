@@ -88,7 +88,6 @@ namespace UdemyVideoSite.Controllers
            _context.SaveChanges();
            return RedirectToAction("Index", "Customers");
         }
-        // GET: Customer
         public ActionResult Index()
         {
             return View();
