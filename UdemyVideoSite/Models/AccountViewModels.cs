@@ -68,6 +68,9 @@ namespace UdemyVideoSite.Models
         [Display(Name="Driver's License No")]
         public string DrivingLicense { get; set; }
         [Required]
+        [Display(Name="Phone Number")]
+        public string Phone { get; set; }
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
