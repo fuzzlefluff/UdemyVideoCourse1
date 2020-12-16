@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using UdemyVideoSite.Models;
+using UdemyVideoSite.ViewModels;
 
 namespace UdemyVideoSite.Controllers
 {
@@ -147,7 +148,7 @@ namespace UdemyVideoSite.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(ViewModels.RegistrationViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -155,7 +156,8 @@ namespace UdemyVideoSite.Controllers
                 {
                     UserName = model.Email, 
                     Email = model.Email,
-                    DrivingLicense =  model.DrivingLicense
+                    DrivingLicense =  model.DrivingLicense,
+                    Phone = model.Phone
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
