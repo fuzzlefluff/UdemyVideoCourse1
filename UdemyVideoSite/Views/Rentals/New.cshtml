@@ -35,6 +35,7 @@
     <script>
         $(document).ready(function () {
             var vm = {
+                customerId: 0,
                 movieIds: []
             };
             var customers = new Bloodhound({
@@ -56,7 +57,7 @@
                     source: customers
                 }).on("typeahead:select",
                     function (e, customer) {
-                        vm.customer.id = customer.id;
+                        vm.customerId = customer.id;
                     });
 
             var movies = new Bloodhound({
