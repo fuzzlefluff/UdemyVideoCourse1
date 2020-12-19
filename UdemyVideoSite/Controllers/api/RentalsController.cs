@@ -22,7 +22,10 @@ namespace UdemyVideoSite.Controllers.api
         [HttpPost]
         public IHttpActionResult NewRental(NewRentalDto newRental)
         {
+            if (newRental == null) { return BadRequest("Nothing was given!");}
+            if (newRental.MovieIds == null) { return BadRequest("No Movie Ids have been given");}
             if (newRental.MovieIds.Count == 0) { return BadRequest("No Movie Ids have been given");}
+            if (newRental.CustomerId == 0) { return BadRequest("No Customer Id has been given!");}
 
             var customer = _context.Customers.Single(c => c.Id == newRental.CustomerId);
             if (customer == null) { return BadRequest("CustomerId is not valid.");}
