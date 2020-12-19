@@ -83,13 +83,17 @@
                         vm.movieIds.push(movie.id);
                     });
 
-            $.validator.addMethod("validCustomer", function () {
-                return vm.customerId && vm.customerId !== 0;
-            }, "Please Select a valid customer.");
+            $.validator.addMethod("validCustomer",
+                function () {
+                    return vm.customerId && vm.customerId !== 0;
+                },
+                "Please Select a valid customer.");
 
-            $.validator.addMethod("min1Movie", function () {
-                return vm.movieIds.length > 0;
-            }, "Please Select at least one movie.");
+            $.validator.addMethod("min1Movie",
+                function () {
+                    return vm.movieIds.length > 0;
+                },
+                "Please Select at least one movie.");
 
             $('#newRental').validate({
                 submitHandler: function () {
@@ -101,6 +105,14 @@
                         .done(function () {
                             console.log("Rental Saved!");
                             toastr.success("Rental saved successfully");
+
+                            $("#customer").typeahead("val", "");
+                            $("#movie").typeahead("val", "");
+                            $("#movies").empty();
+
+                            vm = { customerId: 0, movieIds: [] };
+
+                            validator.resetForm();
                         })
                         .fail(function () {
                             console.log("Rental Error!");
