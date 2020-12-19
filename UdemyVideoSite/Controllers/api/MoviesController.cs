@@ -43,9 +43,9 @@ namespace UdemyVideoSite.Controllers.api
             if (!ModelState.IsValid)
             {
                 return BadRequest();
-
             }
             var movie = Mapper.Map<MovieDto, Movie>(movieDto);
+            movie.NumberAvailable = movie.Stock;
             _context.Movies.Add(movie);
             _context.SaveChanges();
             movieDto.Id = movie.Id;

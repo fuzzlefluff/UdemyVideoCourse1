@@ -43,6 +43,8 @@ namespace UdemyVideoSite.Controllers
         [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
+            movie.NumberAvailable = movie.Stock;
+
             if (!ModelState.IsValid)
             {
                 var viewModel = new NewMovieViewModel()
@@ -64,6 +66,7 @@ namespace UdemyVideoSite.Controllers
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.DateAdded = movie.DateAdded;
                 movieInDb.Stock = movie.Stock;
+                movieInDb.NumberAvailable = movie.Stock;
             }
             _context.SaveChanges();
             return RedirectToAction("Index", "Movies");
@@ -76,7 +79,6 @@ namespace UdemyVideoSite.Controllers
             {
                 return HttpNotFound();
             }
-
             var viewModel = new NewMovieViewModel()
             {
                 Movie = movie,

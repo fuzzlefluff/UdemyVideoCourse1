@@ -23,8 +23,12 @@ namespace UdemyVideoSite.Models
         [Display(Name = "Date Added")]
         public DateTime? DateAdded { get; set; }
         [Required]
-        [Display(Name = "Movies in Stock")]
+        [Display(Name = "Total Movies in Stock")]
         [Range(1,20)]
         public byte Stock { get; set; }
+        [Display(Name = "Movies in Stock")]
+        [Range(0,20)]
+        public byte NumberAvailable{ get; set; } 
+
     }
 }
