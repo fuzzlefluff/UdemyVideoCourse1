@@ -18,7 +18,7 @@ namespace UdemyVideoSite.Controllers.api
         {
             _context = new ApplicationDbContext();
         }
-        // POST /api/rentals
+        // POST /api/newRental
         [HttpPost]
         public IHttpActionResult NewRental(NewRentalDto newRental)
         {

@@ -26,14 +26,14 @@
             <ul id="movies" class="list-group"></ul>
         </div>
     </div>
-    <br/>
+    <br />
     <button class="btn btn-primary">Submit</button>
 </form>
 
 @section scripts
 {
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             var vm = {
                 movieIds: []
             };
@@ -47,17 +47,17 @@
             });
 
             $('#customer').typeahead({
-                    minlength: 2,
-                    highlight: true
-                },
+                minlength: 2,
+                highlight: true
+            },
                 {
                     name: 'customers',
                     display: 'name',
                     source: customers
                 }).on("typeahead:select",
-                function(e, customer) {
-                    vm.customer.id = customer.id;
-                });
+                    function (e, customer) {
+                        vm.customer.id = customer.id;
+                    });
 
             var movies = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -68,32 +68,32 @@
                 }
             });
             $('#movie').typeahead({
-                    minLength: 3,
-                    highlight: true
-                },
+                minLength: 3,
+                highlight: true
+            },
                 {
                     name: 'movies',
                     display: 'name',
                     source: movies
                 }).on("typeahead:select",
-                function(e, movie) {
-                    $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
-                    $("#movie").typeahead("val", "");
-                    vm.movieIds.push(movie.id);
-                });
+                    function (e, movie) {
+                        $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
+                        $("#movie").typeahead("val", "");
+                        vm.movieIds.push(movie.id);
+                    });
 
-            $('#newRental').submit(function(e) {
+            $('#newRental').submit(function (e) {
                 e.preventDefault();
                 $.ajax({
-                        url: "api/newRentals",
-                        method: "post",
-                        data: vm
+                    url: "/api/Rentals/newRentals",
+                    method: "post",
+                    data: vm
+                })
+                    .done(function () {
+                        toastr.success("Rentals successfully recorded.");
                     })
-                    .done(function() {
-                        console.log("done");
-                    })
-                    .fail(function() {
-
+                    .fail(function () {
+                        toastr.error("Something unexpected happened.");
                     })
             });
         });

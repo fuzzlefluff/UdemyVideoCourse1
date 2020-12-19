@@ -14,7 +14,8 @@ namespace UdemyVideoSite
                         "~/Scripts/bootbox.js",
                         "~/Scripts/DataTables/jquery.dataTables.js",
                         "~/Scripts/DataTables/dataTables.bootstrap4.js",
-                        "~/Scripts/typeahead.bundle.js"
+                        "~/Scripts/typeahead.bundle.js",
+                        "~/Scripts/toastr.js"
             ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -29,6 +30,7 @@ namespace UdemyVideoSite
                       "~/Content/bootstrap-darkly.css",
                       "~/Content/DataTables/css/dataTables.bootstrap4.css",
                       "~/Content/typeahead.css",
+                      "~/Content/toaster.css",
                       "~/Content/site.css"));
         }
     }
